@@ -1,0 +1,118 @@
+/* ==========================================
+   FOOTER SECTION
+========================================== */
+@import '../../variables.css';
+
+.footer {
+    background-color: var(--white);
+    border-top: 1px solid var(--border-color);
+    padding-top: 36px;
+    margin-top: 72px;
+}
+
+/* Grid disesuaikan jadi 2 kolom (Kiri tebal, Kanan navigasi) */
+.footer-container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 80px;
+    padding-bottom: 36px;
+}
+
+/* Brand Column */
+.footer-brand .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    text-decoration: none;
+}
+
+.logo-img-footer {
+    width: 32px;
+    /* Sesuaikan lebar logo */
+    height: 32px;
+    /* Sesuaikan tinggi logo */
+    object-fit: contain;
+    /* Biar proporsi gambar logo tetep bagus/gak gepeng */
+}
+
+.footer-desc {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    max-width: 420px;
+    margin-bottom: 16px;
+}
+
+/* 🔴 STYLING ICON MEDSOS CLICKABLE */
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.social-icon-btn {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    /* Bikin sudut tumpul halus */
+    color: var(--primary-color);
+    background-color: var(--white);
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.2s ease;
+}
+
+.social-icon-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    /* Efek naik dikit pas di-hover */
+}
+
+/* Navigation Links */
+.footer-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 48px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 400;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Footer Bottom Bar */
+.footer-bottom {
+    border-top: 1px solid var(--border-color);
+    padding: 24px 0;
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-muted);
+}

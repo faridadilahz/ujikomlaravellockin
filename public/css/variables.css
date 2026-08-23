@@ -1,0 +1,18 @@
+        :root {
+        --primary-color: #4274d9;
+        --primary-hover: #305ac5;
+        --primary-light: #f1f6fd;
+        --primary-danger: #d94245;
+        --primary-danger-hover: #c9393c;
+        --text-dark: #333333;
+        --text-muted: #aaaaaa;
+        --bg-light: #F5F5F5;
+        --white: #ffffff;
+        --border-color: #eeeeee;
+        --border-color-danger: #d94245;
+        --radius-md: 8px;
+        --radius-lg: 12px;
+        --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.05);
+        --main-font: 'Google Sans', sans-serif;
+        --sidebar-width: 272px;
+    }

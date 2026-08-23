@@ -1,0 +1,328 @@
+   @import '../variables.css';
+
+   * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       scroll-behavior: smooth;
+       scroll-padding-top: 24px;
+   }
+
+   body {
+       font-family: 'Google Sans', sans-serif;
+       color: var(--text-dark);
+       background-color: var(--bg-light);
+       line-height: 1.6;
+   }
+
+   .container {
+       width: 90%;
+       max-width: 1200px;
+       margin: 0 auto;
+   }
+
+   /* --- HERO SECTION --- */
+   .hero-section {
+       position: relative;
+       padding: 100px 0 60px 0;
+       background: linear-gradient(#f5f5f5df,
+               #f5f5f5),
+           url('../../assets/img/fotosmkn4bogor.jpg');
+
+       background-size: cover;
+       background-position: center;
+       background-repeat: no-repeat;
+   }
+
+   .hero-grid {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       margin-bottom: 96px;
+   }
+
+   .badge-welcome {
+       color: var(--primary-color);
+       font-weight: 600;
+       font-size: 24px;
+   }
+
+   .hero-title {
+       font-size: 64px;
+       font-weight: 800;
+       line-height: 1;
+       margin-bottom: 8px;
+       color: var(--primary-color);
+   }
+
+   .text-primary {
+       color: var(--primary-color);
+   }
+
+   .hero-subtitle {
+       font-size: 20px;
+       color: var(--text-muted);
+       max-width: 500px;
+       line-height: 1.4;
+   }
+
+   .hero-image {
+       width: 24%;
+       display: flex;
+       justify-content: flex-end;
+   }
+
+   .hero-image img {
+       width: 100%;
+       height: 296px;
+       object-fit: cover;
+       border-radius: var(--radius-lg);
+   }
+
+   /* --- STATS CARD (GABUNG TANPA JARAK) --- */
+   .hero-stats {
+       display: grid;
+       grid-template-columns: repeat(4, 1fr);
+       gap: 0;
+       background-color: var(--primary-color);
+       border: 1px solid var(--border-color);
+       border-radius: var(--radius-lg);
+       box-shadow: var(--shadow-card);
+       overflow: hidden;
+   }
+
+   .stat-card {
+       background-color: transparent;
+       padding: 36px;
+       text-align: center;
+       border: none;
+   }
+
+   .stat-card h3 {
+       font-size: 40px;
+       font-weight: 800;
+       color: var(--white);
+       margin-bottom: 4px;
+   }
+
+   .stat-card p {
+       color: var(--white);
+       font-size: 12px;
+       font-weight: 400;
+       letter-spacing: 0.5px;
+   }
+
+   /* --- SECTION TENTANG KAMI --- */
+   .about-section {
+       padding: 80px 0;
+       background-color: var(--bg-light);
+   }
+
+   .about-container {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       text-align: center;
+   }
+
+   .about-content {
+       max-width: 900px;
+       /* Bikin teks rapi gak terlalu melebar ke samping */
+       margin-bottom: 40px;
+   }
+
+   .badge-subtitle {
+       display: inline-flex;
+       /* Biar teks & titik sejajar rapi secara vertikal */
+       align-items: center;
+       gap: 8px;
+       /* Jarak antara titik bulet dan teks */
+       font-size: 16px;
+       font-weight: 700;
+       color: var(--primary-color);
+       margin-bottom: 16px;
+       padding: 8px 16px;
+       border-radius: 38px;
+       line-height: 1;
+       border: 1px solid #4274D9;
+   }
+
+   /* Bikin lingkaran kecil di sebelah kiri teks */
+   .badge-subtitle::before {
+       content: '';
+       width: 8px;
+       /* Ukuran diameter titik */
+       height: 8px;
+       background-color: var(--primary-color);
+       /* Warna buletan samain kayak teks */
+       border-radius: 50%;
+       /* Bikin bentuknya bulet sempurna */
+       display: inline-block;
+   }
+
+   .about-heading {
+       font-size: 40px;
+       font-weight: 800;
+       line-height: 1.1;
+       color: var(--text-dark);
+       margin-bottom: 16px;
+   }
+
+   .about-text {
+       font-size: 20px;
+       color: var(--text-muted);
+       line-height: 1.4;
+   }
+
+   .about-image {
+       width: 100%;
+   }
+
+   .about-image img {
+       width: 72%;
+       height: 420px;
+       object-fit: cover;
+       border-radius: var(--radius-lg);
+   }
+
+   /* --- SECTION BERITA --- */
+   .news-section {
+       padding: 80px 0;
+       background-color: var(--bg-light);
+   }
+
+   .news-content {
+       margin-bottom: 16px;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       text-align: center;
+   }
+
+   .section-title-left {
+       font-size: 32px;
+       font-weight: 800;
+       color: var(--text-dark);
+       margin-top: 6px;
+   }
+
+   /* Grid 3 Kolom */
+   .news-beranda-grid {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 30px;
+   }
+
+   /* --- SECTION GALERI --- */
+   .gallery-section {
+       padding: 80px 0;
+       background-color: var(--bg-light);
+   }
+
+   .gallery-content {
+       margin-bottom: 16px;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       text-align: center;
+   }
+
+   /* Grid 3 Kolom */
+   .gallery-beranda-grid {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 30px;
+   }
+
+   /* ==========================================
+   SECTION FAQ ACCORDION
+========================================== */
+   .faq-section {
+       padding: 80px 0;
+       background-color: var(--bg-light);
+   }
+
+   .faq-header {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       text-align: center;
+       margin-bottom: 48px;
+   }
+
+   .section-title-center {
+       font-size: 40px;
+       font-weight: 800;
+       color: var(--text-dark);
+       margin-top: 8px;
+   }
+
+   .faq-subtitle {
+       font-size: 20px;
+       color: var(--text-muted);
+   }
+
+   /* Container List Accordion */
+   .faq-list {
+       max-width: 840px;
+       margin: 0 auto;
+       display: flex;
+       flex-direction: column;
+       gap: 8px;
+   }
+
+   /* Card Item FAQ */
+   .faq-item {
+       background-color: var(--white);
+       border: 1px solid var(--border-color);
+       border-radius: 8px;
+       padding: 20px 16px;
+       box-shadow: var(--shadow-card);
+       cursor: pointer;
+       transition: border-color 0.2s ease, box-shadow 0.2s ease;
+   }
+
+   .faq-item:hover {
+       border-color: #cbd5e1;
+   }
+
+   .faq-question {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       gap: 16px;
+   }
+
+   .faq-question h3 {
+       font-size: 19px;
+       font-weight: 600;
+       color: var(--text-dark);
+       line-height: 1.4;
+   }
+
+   .faq-icon {
+       font-size: 22px;
+       color: var(--primary-color);
+       flex-shrink: 0;
+       transition: transform 0.2s ease;
+   }
+
+   /* Area Jawaban (Hidden secara Default) */
+   .faq-answer {
+       display: none;
+       margin-top: 16px;
+       padding-top: 16px;
+       border-top: 1px solid var(--border-color);
+       color: var(--text-muted);
+       font-size: 16px;
+       line-height: 1.6;
+   }
+
+   /* State Aktif saat Accordion Terbuka */
+   .faq-item.active {
+       border-color: #cbd5e1;
+   }
+
+   .faq-item.active .faq-answer {
+       display: block;
+   }
