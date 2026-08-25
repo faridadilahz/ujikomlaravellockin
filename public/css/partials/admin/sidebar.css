@@ -1,0 +1,211 @@
+@import '../../variables.css';
+
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--white);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    font-family: var(--main-font);
+}
+
+.sidebar-brand {
+    padding: 24px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+.sidebar-menu-wrapper {
+    padding: 24px 16px;
+    flex: 1;
+}
+
+.menu-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.8px;
+    margin-bottom: 12px;
+    display: block;
+    padding-left: 12px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease;
+}
+
+.nav-item ion-icon {
+    font-size: 20px;
+}
+
+.nav-item:hover {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+}
+
+.nav-item.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* Pastikan sidebar-footer teratur dan rapi */
+.sidebar-footer {
+    padding: 16px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* 🟢 Styling tombol form agar berperilaku persis seperti tag <a> */
+button.nav-item-danger {
+    width: 100%;
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+    text-align: left;
+}
+
+/* 🟢 Styling khusus tombol logout merah */
+.nav-item-danger {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease;
+    color: #D94245 !important;
+}
+
+.nav-item-danger ion-icon {
+    font-size: 20px;
+}
+
+.nav-item-danger:hover {
+    background-color: #FEF2F2 !important;
+    /* Background merah muda lembut */
+    color: #DC2626 !important;
+    /* Warna teks merah lebih tegas saat di-hover */
+}
+
+.nav-item-danger.active {
+    background-color: #D94245;
+    color: var(--white);
+}
+
+/* ================= CSS MODAL LOGOUT ================= */
+.logout-modal-overlay {
+    display: none; /* Sembunyi secara default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang gelap transparan */
+    z-index: 99999; /* Agar muncul di paling depan layar */
+    align-items: center;
+    justify-content: center;
+}
+
+.logout-modal-box {
+    background: #ffffff;
+    width: 90%;
+    max-width: 480px;
+    padding: 24px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    font-family: var(--main-font);
+}
+
+.logout-modal-box h3 {
+    margin: 0 0 8px 0;
+    font-size: 24px;
+    font-weight: 900;
+    color: #111827;
+}
+
+.logout-modal-box p {
+    margin: 0 0 20px 0;
+    font-size: 16px;
+    color: #6b7280;
+}
+
+.logout-modal-btns {
+    display: flex;
+    gap: 10px;
+}
+
+.logout-modal-btns button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Google Sans' !important;
+}
+
+.btn-batal {
+    background-color: #ffffff;
+    border: 1.5px solid var(--border-color-danger);
+    color: var(--border-color-danger);
+    transition: all 0.3s ease;
+}
+
+.btn-batal:hover {
+    background-color: #f5f5f5;
+}
+
+.btn-yes {
+    background-color: var(--primary-danger);
+    color: #ffffff;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-yes:hover {
+    background-color: var(--primary-danger-hover);
+}
