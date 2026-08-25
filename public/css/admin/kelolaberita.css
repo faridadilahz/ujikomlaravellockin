@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--main-font);
+    background-color: #f9fafb;
+}
+.main-wrapper {
+    margin-left: 260px;
+    min-height: 100vh;
+}
+.content-body {
+    padding: 32px;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}

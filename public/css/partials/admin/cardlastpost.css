@@ -1,45 +1,47 @@
 @import '../../variables.css';
 
 /* Base Card */
-.gallery-card {
+.last-post-card {
     background-color: #ffffff;
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
     overflow: hidden;
     display: flex;
     padding: 12px;
-    border: 1.5px solid #EEEEEE;
+    border: 1.5px solid #eeeeee;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
-.gallery-card:hover {
+.last-post-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
 }
 
-.gallery-card-image {
+.last-post-card-image {
     width: 100%;
     height: 200px;
     overflow: hidden;
     border-radius: 8px;
 }
 
-.gallery-card-image img {
+.last-post-card-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.gallery-card-body {
+.last-post-card-body {
     padding-top: 16px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
-.gallery-date {
+.last-post-date {
     display: inline-flex;
     align-items: center;
     line-height: 0.6;
@@ -50,13 +52,13 @@
     margin-bottom: 8px;
 }
 
-.gallery-date ion-icon {
+.last-post-date ion-icon {
     font-size: 13px;
     color: var(--text-muted);
 }
 
 /* 🔴 TRUNCATE 3 BARIS UNTUK JUDUL */
-.gallery-card-title {
+.last-post-card-title {
     font-size: 20px;
     font-weight: 800;
     line-height: 1.2;
@@ -70,7 +72,7 @@
 }
 
 /* 🔴 TRUNCATE 3 BARIS UNTUK DESKRIPSI */
-.gallery-card-desc {
+.last-post-card-desc {
     font-size: 16px;
     color: var(--text-muted);
     line-height: 1.4;
@@ -83,7 +85,7 @@
 }
 
 /* Footer Card (Badge & CTA) */
-.gallery-card-footer {
+.last-post-card-footer {
     margin-top: auto;
     display: flex;
     flex-direction: column;
@@ -94,43 +96,54 @@
 }
 
 .badge-tag {
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 700;
     color: var(--primary-color);
     background-color: var(--primary-light);
-    padding: 4px 8px;
+    padding: 8px 12px;
     border-radius: 4px;
 }
 
-/* 🔴 CTA Tombol Gede Full Width */
-.gallery-cta {
+/* Container Tombol Aksi */
+.action-buttons {
     width: 100%;
-    /* Biar lebarnya penuhi card */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Base Tombol CTA */
+.news-cta {
+    width: 100%;
     display: inline-flex;
     justify-content: center;
-    /* Teks & Icon di tengah */
     align-items: center;
     gap: 8px;
-
     padding: 16px 16px;
-    /* Bikin tombol makin tebal/gede */
     background-color: var(--primary-color);
     color: var(--white);
     border-radius: 8px;
-
     font-size: 16px;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+    box-sizing: border-box;
     line-height: 1;
     font-weight: 700;
     text-decoration: none;
     transition: all 0.2s ease;
 }
 
-.gallery-cta ion-icon {
+.news-cta ion-icon {
     font-size: 18px;
 }
 
-/* Efek Hover Tombol CTA */
-.gallery-cta:hover {
+.btn-edit {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-edit:hover {
     background-color: var(--primary-hover);
     color: #ffffff;
 }
