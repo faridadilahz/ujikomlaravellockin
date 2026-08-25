@@ -1,0 +1,51 @@
+.grid-2col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Otomatis bagi 2 kolom sama besar (50% : 50%) */
+    gap: 24px;
+    /* Jarak antar card */
+    width: 100%;
+    /* Memenuhi seluruh lebar container */
+}
+
+.content-card {
+    background-color: var(--white);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    padding: 24px;
+    width: 100%;
+    /* Hapus width: 580px, ganti jadi 100% biar fleksibel */
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.card-data {
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.card-subtitle {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.badge-tag {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-color);
+    background-color: var(--primary-light);
+    padding: 8px 12px;
+    border-radius: 4px;
+}
