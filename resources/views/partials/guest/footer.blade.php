@@ -1,10 +1,11 @@
+<link rel="stylesheet" href="{{ asset('css/partials/guest/footer.css') }}" />
+
 <footer class="footer">
         <div class="container footer-container">
             <div class="footer-brand">
                 <a href="beranda" class="logo">
                     <img src="assets/img/logosss.png" alt="Logo Seruli" class="logo-img-footer" />
                     <span class="logo-text">Seruli</span>
-                    <link rel="stylesheet" href="{{ asset('css/partials/guest/footer.css') }}" />
                 </a>
                 <p class="footer-desc">
                     Mewujudkan generasi unggul, berkarakter, dan kompeten di bidang
