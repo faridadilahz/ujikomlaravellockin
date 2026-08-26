@@ -1,27 +1,25 @@
 <link rel="stylesheet" href="{{ asset('css/partials/admin/cardlastpost.css') }}" />
 
-
+@if($lastBerita)
 <div class="last-post-card">
     <div class="last-post-card-image">
-        <img src="../assets/img/berita-card.png" alt="Berita Seruli" />
+        <img src="{{ asset('storage/' . $lastBerita->imageberita) }}" alt="{{ $lastBerita->judulberita }}" />
     </div>
     <div class="last-post-card-body">
         <div class="last-post-date">
             <ion-icon name="calendar-outline"></ion-icon>
-            <span>27 Oktober 2025</span>
+            <span>{{ $lastBerita->created_at->locale('id')->translatedFormat('d F Y') }}</span>
         </div>
         <h3 class="last-post-card-title">
-            Siswa PPLG Sekolah Seru Sekali Juara 2 TECHNOUPDATE X HIMPACT
+            {{ $lastBerita->judulberita }}
         </h3>
         <p class="last-post-card-desc">
-            Selamat dan sukses kepada tim PPLG Sekolah Seru Sekali yang
-            berhasil meraih Juara 2 dalam ajang kompetisi teknologi
-            bergengsi tingkat provinsi.
+            {{ $lastBerita->deskripsiberita }}
         </p>
         <div class="last-post-card-footer">
-            <span class="badge-tag">Prestasi</span>
+            <span class="badge-tag">{{ $lastBerita->kategoriberita }}</span>
             <div class="action-buttons">
-                <button type="button" class="news-cta btn-edit">
+                <button type="button" class="news-cta btn-edit" onclick="window.location.href='{{ route('admin.berita.edit', $lastBerita->id) }}'">
                     <ion-icon name="open-outline"></ion-icon>
                     <span>Lihat Selengkapnya</span>
                 </button>
@@ -29,3 +27,8 @@
         </div>
     </div>
 </div>
+@else
+<div class="empty-state">
+    <p>Belum ada postingan berita terakhir.</p>
+</div>
+@endif

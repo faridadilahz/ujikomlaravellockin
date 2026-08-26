@@ -13,7 +13,7 @@ class Galeris extends Model
 
     protected $fillable = [
         'judulgaleri',
-        'deskripsigaleri',
+        'kategorigaleri',
         'imagegaleri',
     ];
 }

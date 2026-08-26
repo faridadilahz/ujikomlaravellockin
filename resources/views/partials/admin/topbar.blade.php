@@ -28,7 +28,7 @@
     </div>
 
     <div class="topbar-right">
-        @if(request()->routeIs('admin.berita*'))
+        @if(request()->routeIs('admin.berita'))
             <div class="topbar-search-box">
                 <ion-icon name="search-outline"></ion-icon>
                 <input type="text" placeholder="Cari Berita..." id="searchBeritaInput" />
@@ -38,12 +38,12 @@
                 <span>Posting Berita</span>
             </a>
 
-        @elseif(request()->routeIs('admin.galeri*'))
+        @elseif(request()->routeIs('admin.galeri'))
             <div class="topbar-search-box">
                 <ion-icon name="search-outline"></ion-icon>
                 <input type="text" placeholder="Cari Galeri..." id="searchGaleriInput" />
             </div>
-            <a href="#" class="btn-topbar-primary">
+            <a href="{{ route('admin.galeri.posting') }}" class="btn-topbar-primary">
                 <ion-icon name="add-outline"></ion-icon>
                 <span>Posting Galeri</span>
             </a>
