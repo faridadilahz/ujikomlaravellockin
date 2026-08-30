@@ -18,7 +18,7 @@
         </p>
         <div class="news-card-footer">
             <span class="badge-tag">{{ $item->kategoriberita }}</span>
-            <a href="#" class="news-cta">
+            <a href="berita" class="news-cta">
                 <span>Lihat Selengkapnya</span>
                 <ion-icon name="open-outline"></ion-icon>
             </a>

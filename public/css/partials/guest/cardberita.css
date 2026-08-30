@@ -145,3 +145,10 @@
 .btn-delete {
     background-color: var(--border-color-danger);
 }
+
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    color: var(--text-muted);
+}

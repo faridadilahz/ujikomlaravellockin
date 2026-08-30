@@ -1,34 +1,59 @@
 <link rel="stylesheet" href="{{ asset('css/partials/admin/cardlastpost.css') }}" />
 
-@if($lastBerita)
+@forelse($recentPosts as $post)
 <div class="last-post-card">
     <div class="last-post-card-image">
-        <img src="{{ asset('storage/' . $lastBerita->imageberita) }}" alt="{{ $lastBerita->judulberita }}" />
+        <!-- Pengecekan path gambar berdasarkan tipe postingan -->
+        @if($post->post_type === 'berita')
+            <img src="{{ asset('storage/' . $post->imageberita) }}" alt="{{ $post->judulberita }}" />
+        @else
+            <img src="{{ asset('storage/' . $post->imagegaleri) }}" alt="{{ $post->judulgaleri }}" />
+        @endif
     </div>
+    
     <div class="last-post-card-body">
         <div class="last-post-date">
             <ion-icon name="calendar-outline"></ion-icon>
-            <span>{{ $lastBerita->created_at->locale('id')->translatedFormat('d F Y') }}</span>
+            <span>{{ $post->created_at->locale('id')->translatedFormat('d F Y') }}</span>
         </div>
+
+        <!-- Judul -->
         <h3 class="last-post-card-title">
-            {{ $lastBerita->judulberita }}
+            {{ $post->post_type === 'berita' ? $post->judulberita : $post->judulgaleri }}
         </h3>
-        <p class="last-post-card-desc">
-            {{ $lastBerita->deskripsiberita }}
-        </p>
+
+        <!-- Deskripsi (Khusus Berita) -->
+        @if($post->post_type === 'berita')
+            <p class="last-post-card-desc">
+                {{ $post->deskripsiberita }}
+            </p>
+        @endif
+
         <div class="last-post-card-footer">
-            <span class="badge-tag">{{ $lastBerita->kategoriberita }}</span>
+            <!-- Badge Kategori -->
+            <span class="badge-tag">
+                {{ $post->post_type === 'berita' ? $post->kategoriberita : $post->kategorigaleri }}
+            </span>
+
+            <!-- Tombol Aksi -->
             <div class="action-buttons">
-                <button type="button" class="news-cta btn-edit" onclick="window.location.href='{{ route('admin.berita.edit', $lastBerita->id) }}'">
-                    <ion-icon name="open-outline"></ion-icon>
-                    <span>Lihat Selengkapnya</span>
-                </button>
+                @if($post->post_type === 'berita')
+                    <button type="button" class="news-cta btn-edit" onclick="window.location.href='{{ route('admin.berita.edit', $post->id) }}'">
+                        <ion-icon name="open-outline"></ion-icon>
+                        <span>Edit Berita</span>
+                    </button>
+                @else
+                    <button type="button" class="news-cta btn-edit" onclick="window.location.href='{{ route('admin.galeri.edit', $post->id) }}'">
+                        <ion-icon name="open-outline"></ion-icon>
+                        <span>Edit Galeri</span>
+                    </button>
+                @endif
             </div>
         </div>
     </div>
 </div>
-@else
+@empty
 <div class="empty-state">
-    <p>Belum ada postingan berita terakhir.</p>
+    <p>Belum ada postingan terbaru.</p>
 </div>
-@endif
+@endforelse
