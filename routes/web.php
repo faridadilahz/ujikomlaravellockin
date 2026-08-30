@@ -32,6 +32,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     // CRUD Berita
     Route::get('/berita', [BeritaController::class, 'index'])->name('berita');
     Route::get('/berita/posting-berita', [BeritaController::class, 'create'])->name('berita.posting');
+    Route::get('/berita/{id}', [BeritaController::class, 'show'])->name('berita.show');
     Route::post('/berita', [BeritaController::class, 'store'])->name('berita.store');
 
     Route::get('/berita/{id}/edit', [BeritaController::class, 'edit'])->name('berita.edit');
@@ -41,6 +42,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     // Kelola Galeri
     Route::get('/galeri', [GaleriController::class, 'index'])->name('galeri');
     Route::get('/galeri/posting-galeri', [GaleriController::class, 'create'])->name('galeri.posting');
+    Route::get('/galeri/{id}', [GaleriController::class, 'show'])->name('galeri.show');
     Route::post('/galeri', [GaleriController::class, 'store'])->name('galeri.store');
 
     Route::get('/galeri/{id}/edit', [GaleriController::class, 'edit'])->name('galeri.edit');

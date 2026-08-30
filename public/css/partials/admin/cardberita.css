@@ -8,6 +8,7 @@
     overflow: hidden;
     display: flex;
     padding: 12px;
+    cursor: pointer;
     border: 1.5px solid #eeeeee;
     flex-direction: column;
     justify-content: space-between;

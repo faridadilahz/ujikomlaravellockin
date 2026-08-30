@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="{{ asset('css/partials/admin/cardgaleri.css') }}" />
 
 @forelse($galeris as $item)
-<div class="gallery-card">
+<div class="gallery-card" onclick="window.location.href='{{ route('admin.galeri.show', $item->id) }}'" style="cursor: pointer;">
     <div class="gallery-card-image">
         <img src="{{ asset('storage/' . $item->imagegaleri) }}" alt="{{ $item->judulgaleri }}" />
     </div>
@@ -18,12 +18,12 @@
             
             <div class="action-buttons">
                 <!-- Tombol Edit (Arahkan ke Route Edit) -->
-                <button type="button" class="gallery-cta btn-edit" onclick="window.location.href='{{ route('admin.galeri.edit', $item->id) }}'">
+                <button type="button" class="gallery-cta btn-edit" onclick="event.stopPropagation(); window.location.href='{{ route('admin.galeri.edit', $item->id) }}'">
                     <span>Edit Galeri</span>
                 </button>
 
                 <!-- Tombol Hapus (Form Method DELETE) -->
-                <form action="{{ route('admin.galeri.destroy', $item->id) }}" method="POST" style="width: 100%;" onsubmit="return confirm('Yakin ingin menghapus galeri ini?');">
+                <form action="{{ route('admin.galeri.destroy', $item->id) }}" method="POST" style="width: 100%;" onclick="event.stopPropagation();" onsubmit="return confirm('Yakin ingin menghapus galeri ini?');">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="gallery-cta btn-delete">

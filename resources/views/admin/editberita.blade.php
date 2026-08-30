@@ -32,6 +32,8 @@
                 @csrf
                 @method('PUT')
 
+                <input type="hidden" name="redirect_to" value="{{ url()->previous() }}">
+
                 <!-- 1. Form Upload Gambar -->
                 <div class="form-group">
                     <label class="form-label">Gambar Berita</label>
@@ -87,7 +89,7 @@
                 <!-- 5. Group Tombol Aksi -->
                 <div class="form-actions">
                     <button type="submit" class="btn-submit">Simpan Perubahan</button>
-                    <a href="{{ route('admin.berita') }}" class="btn-cancel">Batal</a>
+                    <a href="{{ url()->previous() }}" class="btn-cancel">Batal</a>
                 </div>
             </form>
         </div>

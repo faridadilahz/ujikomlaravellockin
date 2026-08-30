@@ -38,6 +38,12 @@ class GaleriController extends Controller
         return redirect()->route('admin.galeri')->with('success', 'Galeri berhasil diposting!');
     }
 
+    public function show($id)
+    {
+        $galeri = Galeris::findOrFail($id);
+        return view('admin.detailgaleri', compact('galeri'));
+    }
+
     public function edit($id)
     {
         $galeri = Galeris::findOrFail($id);
@@ -63,7 +69,7 @@ class GaleriController extends Controller
         $galeri->kategorigaleri = $request->kategorigaleri;
         $galeri->save();
 
-        return redirect()->route('admin.galeri')->with('success', 'Galeri berhasil diperbarui!');
+        return redirect($request->input('redirect_to', route('admin.galeri')))->with('success', 'Galeri berhasil diperbarui!');
     }
 
 
