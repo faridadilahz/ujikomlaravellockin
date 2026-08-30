@@ -54,7 +54,7 @@
         <div class="footer-bottom">
             <div class="container">
                 <p>
-                    © Copyright 2026 Sekolah Seru Sekali. Hak Cipta Dilindungi
+                    © 2026 Sekolah Seru Sekali. Hak Cipta Dilindungi
                     Undang-Undang.
                 </p>
             </div>
