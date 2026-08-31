@@ -34,15 +34,15 @@ class ProfileController extends Controller
         ]);
 
         // Handle Upload Avatar
-    if ($request->hasFile('avatar')) {
-        // Hapus foto lama jika ada
-        if ($user->avatar && Storage::disk('public')->exists($user->avatar)) {
-            Storage::disk('public')->delete($user->avatar);
-        }
+        if ($request->hasFile('avatar')) {
+            // Hapus foto lama jika ada
+            if ($user->avatar && Storage::disk('public')->exists($user->avatar)) {
+                Storage::disk('public')->delete($user->avatar);
+            }
 
-        $avatarPath = $request->file('avatar')->store('avatars', 'public');
-        $user->avatar = $avatarPath;
-    }
+            $avatarPath = $request->file('avatar')->store('avatars', 'public');
+            $user->avatar = $avatarPath;
+        }
 
         $user->name = $request->name;
         $user->email = $request->email;
@@ -54,37 +54,37 @@ class ProfileController extends Controller
     }
 
     public function kelolasandi()
-{
-    $user = Auth::user();
-    $previousUrl = url()->previous();
+    {
+        $user = Auth::user();
+        $previousUrl = url()->previous();
 
-    return view('admin.kelolakatasandi', compact('user','previousUrl'));
-}
-
-public function ubahsandi()
-{
-    $previousUrl = route('admin.kelolakatasandi');
-    return view('admin.ubahkatasandi', compact('previousUrl'));
-}
-
-public function updatesandi(Request $request)
-{
-    /** @var \App\Models\User $user */
-    $user = Auth::user();
-
-    $request->validate([
-        'current_password' => ['required', 'string'],
-        'password'         => ['required', 'string', 'min:8', 'confirmed'],
-    ]);
-
-    if (!Hash::check($request->current_password, $user->password)) {
-        return back()->withErrors(['current_password' => 'Kata sandi saat ini salah.']);
+        return view('admin.kelolakatasandi', compact('user', 'previousUrl'));
     }
 
-    $user->password = Hash::make($request->password);
-    $user->save();
+    public function ubahsandi()
+    {
+        $previousUrl = route('admin.kelolakatasandi');
+        return view('admin.ubahkatasandi', compact('previousUrl'));
+    }
 
-    // 🟢 Ubah redirect ke route admin.kelolakatasandi
-    return redirect()->route('admin.kelolakatasandi')->with('success', 'Kata sandi berhasil diperbarui!');
-}
+    public function updatesandi(Request $request)
+    {
+        /** @var \App\Models\User $user */
+        $user = Auth::user();
+
+        $request->validate([
+            'current_password' => ['required', 'string'],
+            'password'         => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        if (!Hash::check($request->current_password, $user->password)) {
+            return back()->withErrors(['current_password' => 'Kata sandi saat ini salah.']);
+        }
+
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        // 🟢 Ubah redirect ke route admin.kelolakatasandi
+        return redirect()->route('admin.kelolakatasandi')->with('success', 'Kata sandi berhasil diperbarui!');
+    }
 }
