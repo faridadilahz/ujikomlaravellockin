@@ -1,13 +1,14 @@
 /* ==========================================
    FOOTER SECTION
 ========================================== */
-@import '../../variables.css';
+@import "../../variables.css";
 
 .footer {
     background-color: var(--white);
     border-top: 1px solid var(--border-color);
     padding-top: 36px;
     margin-top: 72px;
+    width: 100%;
 }
 
 /* Grid disesuaikan jadi 2 kolom (Kiri tebal, Kanan navigasi) */
@@ -16,6 +17,10 @@
     grid-template-columns: 1fr auto;
     gap: 80px;
     padding-bottom: 36px;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
 }
 
 /* Brand Column */
@@ -113,6 +118,7 @@
     border-top: 1px solid var(--border-color);
     padding: 24px 0;
     text-align: center;
+    margin-top: 24px;
     font-size: 14px;
     color: var(--text-muted);
 }

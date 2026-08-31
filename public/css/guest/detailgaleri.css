@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--main-font);
+}
+
+body {
+    background-color: var(--bg-light);
+}
+
+.detail-container {
+    max-width: 1240px;
+    margin: 32px auto 60px;
+    padding: 0 24px;
+}
+
+/* Layout Grid */
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Otomatis Ngelebar Kalau Tidak Ada Sidebar */
+.detail-grid.no-sidebar {
+    grid-template-columns: 1fr;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Main Content Area */
+.main-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-image-box {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.main-image-box img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Meta Row */
+.meta-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.author-tag, .date-tag {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.author-tag ion-icon, .date-tag ion-icon {
+    color: var(--text-muted);
+}
+
+.badge-tag {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    padding: 4px 12px;
+    border-radius: var(--radius-md);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Post Title & Description */
+.post-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--primary-color);
+    line-height: 1.3;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.post-description {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-muted);
+    white-space: pre-line;
+}
+
+/* Sidebar Area (Kanan) */
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sidebar-title {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.sidebar-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sidebar-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease;
+}
+
+.sidebar-item:hover {
+    transform: translateY(-2px);
+}
+
+.sidebar-img {
+    width: 120px;
+    height: 80px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.sidebar-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sidebar-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar-item-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.sidebar-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.sidebar-meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}

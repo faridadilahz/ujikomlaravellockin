@@ -13,8 +13,12 @@ Route::get('/', function () {
 
 // 🟢 Route Guest (Semua via GuestController)
 Route::get('/beranda', [GuestController::class, 'beranda'])->name('guest.beranda');
+
 Route::get('/berita', [GuestController::class, 'berita'])->name('guest.berita');
+Route::get('/berita/{id}', [GuestController::class, 'showBerita'])->name('guest.berita.show');
+
 Route::get('/galeri', [GuestController::class, 'galeri'])->name('guest.galeri');
+Route::get('/galeri/{id}', [GuestController::class, 'showGaleri'])->name('guest.galeri.show');
 
 Route::get('/faq', function () {
     return view('guest.faq');

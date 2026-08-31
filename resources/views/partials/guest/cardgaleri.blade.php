@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="{{ asset('css/partials/guest/cardgaleri.css') }}" />
 
 @forelse($galeris as $item)
-<div class="gallery-card">
+<div class="news-card" onclick="window.location.href='{{ route('guest.galeri.show', $item->id) }}'" style="cursor: pointer;">
     <div class="gallery-card-image">
         <img src="{{ asset('storage/' . $item->imagegaleri) }}" alt="{{ $item->judulgaleri }}" />
     </div>

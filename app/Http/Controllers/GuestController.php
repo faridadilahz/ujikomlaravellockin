@@ -23,10 +23,26 @@ class GuestController extends Controller
         return view('guest.berita', compact('beritas'));
     }
 
+    public function showBerita($id)
+    {
+        $berita = Beritas::findOrFail($id);
+
+        $beritaLain = Beritas::where('id', '!=', $id)->latest()->take(6)->get();
+        return view('guest.detailberita',compact('berita', 'beritaLain'));
+    }
+
     public function galeri()
     {
         // Ambil semua galeri untuk halaman galeri
         $galeris = Galeris::latest()->get();
         return view('guest.galeri', compact('galeris'));
+    }
+
+        public function showGaleri($id)
+    {
+        $galeri = Galeris::findOrFail($id);
+
+        $galeriLain = Galeris::where('id', '!=', $id)->latest()->take(6)->get();
+        return view('guest.detailgaleri',compact('galeri', 'galeriLain'));
     }
 }

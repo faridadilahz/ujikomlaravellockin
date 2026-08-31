@@ -4,7 +4,7 @@
         <div class="container footer-container">
             <div class="footer-brand">
                 <a href="beranda" class="logo">
-                    <img src="assets/img/logosss.png" alt="Logo Seruli" class="logo-img-footer" />
+                    <img src="{{ asset('assets/img/logosss.png') }}" alt="Logo Seruli" class="logo-img-footer" />
                     <span class="logo-text">Seruli</span>
                 </a>
                 <p class="footer-desc">
@@ -38,10 +38,10 @@
 
             <div class="footer-nav">
                 <ul class="footer-links">
-                    <li><a href="beranda">Beranda</a></li>
-                    <li><a href="berita">Berita</a></li>
-                    <li><a href="galeri">Galeri</a></li>
-                    <li><a href="faq">FAQ</a></li>
+                    <li><a href="/beranda">Beranda</a></li>
+                    <li><a href="/berita">Berita</a></li>
+                    <li><a href="/galeri">Galeri</a></li>
+                    <li><a href="/faq">FAQ</a></li>
                 </ul>
 
                 <ul class="footer-links">

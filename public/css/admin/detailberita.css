@@ -132,9 +132,52 @@ body {
     font-weight: 500;
 }
 
-.author-item ion-icon, .date-item ion-icon {
+.author-item ion-icon, .date-item ion-icon {* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--main-font);
+}
+
+body {
+    background-color: var(--bg-light);
+    overflow-x: hidden; /* Mencegah screen melimpah ke samping */
+}
+
+/* Container Pembatas Utama */
+.detail-container {
+    width: 100%;
+    max-width: 1200px; /* Samakan max-width dengan container navbar kamu */
+    margin: 40px auto 60px;
+    padding: 0 24px;
+}
+
+/* Layout Grid */
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 40px;
+    align-items: start;
+    width: 100%;
+}
+
+.detail-grid.no-sidebar {
+    grid-template-columns: 1fr;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* Pastikan gambar tidak memaksa lebar melebihi layar */
+.main-image-box img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+}
     font-size: 18px;
-    color: var(--primary-color);
+    color: var(--text-muted);
 }
 
 .badge-tag {

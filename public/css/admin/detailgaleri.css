@@ -134,7 +134,7 @@ body {
 
 .author-item ion-icon, .date-item ion-icon {
     font-size: 18px;
-    color: var(--primary-color);
+    color: var(--text-muted);
 }
 
 .badge-tag {

@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="{{ asset('css/partials/guest/cardberita.css') }}" />
 
 @forelse($beritas as $item)
-<div class="news-card">
+<div class="news-card" onclick="window.location.href='{{ route('guest.berita.show', $item->id) }}'" style="cursor: pointer;">
     <div class="news-card-image">
         <img src="{{ asset('storage/' . $item->imageberita) }}" alt="{{ $item->judulberita }}" />
     </div>
