@@ -43,7 +43,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/berita/{id}/edit', [BeritaController::class, 'edit'])->name('berita.edit');
     Route::put('/berita/{id}', [BeritaController::class, 'update'])->name('berita.update');
     Route::delete('/berita/{id}', [BeritaController::class, 'destroy'])->name('berita.destroy');
-    
+
     // Kelola Galeri
     Route::get('/galeri', [GaleriController::class, 'index'])->name('galeri');
     Route::get('/galeri/posting-galeri', [GaleriController::class, 'create'])->name('galeri.posting');
@@ -54,6 +54,13 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::put('/galeri/{id}', [GaleriController::class, 'update'])->name('galeri.update');
     Route::delete('/galeri/{id}', [GaleriController::class, 'destroy'])->name('galeri.destroy');
 
-    // Profil
+    // Profil & Kelola Akun
     Route::get('/akun', [ProfileController::class, 'index'])->name('akun');
+    Route::get('/akun/edit', [ProfileController::class, 'edit'])->name('akun.edit');
+    Route::put('/akun/update', [ProfileController::class, 'update'])->name('akun.update');
+
+    // Kelola Kata Sandi (Preview & Ubah Baru)
+    Route::get('/kelolakatasandi', [ProfileController::class, 'kelolasandi'])->name('kelolakatasandi');
+    Route::get('/kelolakatasandi/ubah', [ProfileController::class, 'ubahsandi'])->name('kelolakatasandi.ubah');
+    Route::put('/kelolakatasandi/update', [ProfileController::class, 'updatesandi'])->name('kelolakatasandi.update');
 });
