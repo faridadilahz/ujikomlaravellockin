@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--main-font);
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+.main-wrapper {
+    margin-left: var(--sidebar-width);
+    padding: 40px;
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+}
+
+/* Grid Layout 2 Kolom */
+.account-grid {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+/* Profile Card (Kiri) */
+.profile-card {
+    background-color: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+}
+
+.avatar-box {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: #f8fafc;
+}
+
+.avatar-img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.profile-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 4px;
+}
+
+.profile-email {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.btn-edit-profile {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.btn-edit-profile:hover {
+    opacity: 0.8;
+}
+
+/* Settings Column (Kanan) */
+.settings-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.setting-card {
+    width: 100%;
+    background-color: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: left;
+}
+
+.setting-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.setting-icon {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-lock {
+    color: var(--primary-color);
+}
+
+.icon-logout {
+    color: #ef4444;
+}
+
+.setting-text {
+    flex: 1;
+}
+
+.setting-text h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+}
+
+.setting-text p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.arrow-icon {
+    font-size: 18px;
+    color: var(--text-muted);
+}
+
+.text-danger {
+    color: #ef4444 !important;
+}
+
+#logout-form {
+    margin: 0;
+    width: 100%;
+}
+
+/* ================= CSS MODAL LOGOUT ================= */
+.logout-modal-overlay {
+    display: none; /* Sembunyi secara default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang gelap transparan */
+    z-index: 99999; /* Agar muncul di paling depan layar */
+    align-items: center;
+    justify-content: center;
+}
+
+.logout-modal-box {
+    background: #ffffff;
+    width: 90%;
+    max-width: 480px;
+    padding: 24px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    font-family: var(--main-font);
+}
+
+.logout-modal-box h3 {
+    margin: 0 0 8px 0;
+    font-size: 24px;
+    font-weight: 900;
+    color: #111827;
+}
+
+.logout-modal-box p {
+    margin: 0 0 20px 0;
+    font-size: 16px;
+    color: #6b7280;
+}
+
+.logout-modal-btns {
+    display: flex;
+    gap: 10px;
+}
+
+.logout-modal-btns button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Google Sans' !important;
+}
+
+.btn-batal {
+    background-color: #ffffff;
+    border: 1.5px solid var(--border-color-danger);
+    color: var(--border-color-danger);
+    transition: all 0.3s ease;
+}
+
+.btn-batal:hover {
+    background-color: #f5f5f5;
+}
+
+.btn-yes {
+    background-color: var(--primary-danger);
+    color: #ffffff;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-yes:hover {
+    background-color: var(--primary-danger-hover);
+}

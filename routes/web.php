@@ -6,6 +6,7 @@ use App\Http\Controllers\GuestController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\GaleriController;
+use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
     return redirect()->route('guest.beranda');
@@ -53,7 +54,6 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::put('/galeri/{id}', [GaleriController::class, 'update'])->name('galeri.update');
     Route::delete('/galeri/{id}', [GaleriController::class, 'destroy'])->name('galeri.destroy');
 
-    // FAQ & Profil
-    Route::get('/faq', [AdminController::class, 'faq'])->name('faq');
-    Route::get('/profil', [AdminController::class, 'profil'])->name('profil');
+    // Profil
+    Route::get('/akun', [ProfileController::class, 'index'])->name('akun');
 });

@@ -37,10 +37,10 @@
     <div class="sidebar-footer">
         <ul class="sidebar-menu">
             <li>
-                <a href="{{ route('admin.profil') }}"
-                    class="nav-item {{ request()->routeIs('admin.profil') ? 'active' : '' }}">
+                <a href="{{ route('admin.akun') }}"
+                    class="nav-item {{ request()->routeIs('admin.akun') ? 'active' : '' }}">
                     <ion-icon name="person-outline"></ion-icon>
-                    <span>Profil</span>
+                    <span>Akun</span>
                 </a>
             </li>
             <li>

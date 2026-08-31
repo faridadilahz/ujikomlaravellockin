@@ -17,9 +17,9 @@
             <h1 class="page-title">Kelola FAQ</h1>
             <p class="page-subtitle">Daftar pertanyaan yang sering ditanyakan pengunjung.</p>
 
-        @elseif(request()->routeIs('admin.profil*'))
-            <h1 class="page-title">Profil Admin</h1>
-            <p class="page-subtitle">Pengaturan akun dan informasi profil admin.</p>
+        @elseif(request()->routeIs('admin.akun*'))
+            <h1 class="page-title">Akun Admin</h1>
+            <p class="page-subtitle">Pengaturan akun dan informasi akun admin.</p>
 
         @else
             <h1 class="page-title">{{ $pageTitle ?? 'Panel Admin' }}</h1>
